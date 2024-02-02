@@ -27,10 +27,14 @@
             <!-- NEXT ARROW -->
             <div class="next"></div>
             <!-- SIDEBAR -->
-            <div class="thumb active">
-              <img src="img/01.webp" alt="Svezia" />
+            <div
+              v-for="(slide, index) of slides"
+              class="thumb"
+              :class="(index == observedImg)? 'active': ''"
+            >
+              <img :src="slide.image" :alt="slide.title" />
             </div>
-            <div class="thumb">
+            <!-- <div class="thumb">
               <img src="img/02.webp" alt="Ratchet & Clank" />
             </div>
             <div class="thumb">
@@ -41,7 +45,7 @@
             </div>
             <div class="thumb">
               <img src="img/05.webp" alt="Avengers" />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
