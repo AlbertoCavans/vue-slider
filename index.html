@@ -23,14 +23,15 @@
 
           <div class="thumbs">
             <!-- PREV ARROW -->
-            <div class="prev"></div>
+            <div class="prev" @click="prevSlide()"></div>
             <!-- NEXT ARROW -->
-            <div class="next"></div>
+            <div class="next" @click="nextSlide()"></div>
             <!-- SIDEBAR -->
             <div
               v-for="(slide, index) of slides"
               class="thumb"
               :class="(index == observedImg)? 'active': ''"
+              @click="goToSlide(index)"
             >
               <img :src="slide.image" :alt="slide.title" />
             </div>
