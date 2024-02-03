@@ -41,14 +41,14 @@ const app = createApp({
 
     prevSlide() {
       if (this.observedImg <= 0) {
-        this.goToSlide(this.slides.lenght - 1);
+        this.goToSlide(this.slides.length - 1);
       } else {
         this.goToSlide(this.observedImg - 1);
       }
     },
 
     nextSlide() {
-      if (this.observedImg >= this.slides.lenght - 1) {
+      if (this.observedImg >= this.slides.length - 1) {
         this.goToSlide(0);
       } else {
         this.goToSlide(this.observedImg + 1);
