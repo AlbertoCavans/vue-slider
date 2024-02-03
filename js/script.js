@@ -31,6 +31,8 @@ const app = createApp({
       ],
 
       observedImg: 0,
+
+      autoMode: false,
     };
   },
 
@@ -54,10 +56,16 @@ const app = createApp({
         this.goToSlide(this.observedImg + 1);
       }
     },
+
+    setAutoMode() {
+      this.autoMode = setInterval(() => {
+        this.nextSlide();
+      }, 3000);
+    },
   },
 
   mounted() {
-    console.log("app montata");
+    this.setAutoMode();
   },
 });
 app.mount("#app");
